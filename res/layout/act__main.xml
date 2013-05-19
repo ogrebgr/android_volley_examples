@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Act_Main" >
+
+    <Button
+        android:id="@+id/btn_simple_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/act__main__btn_simple_request" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_json_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/act__main__btn_json_request" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_gson_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/act__main__btn_gson_request" >
+    </Button>
+
+</LinearLayout>
