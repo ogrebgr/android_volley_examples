@@ -25,5 +25,10 @@
         android:layout_height="wrap_content"
         android:text="@string/act__main__btn_gson_request" >
     </Button>
-
+    <Button
+        android:id="@+id/btn_image_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/act__main__btn_image_loading" >
+    </Button>
 </LinearLayout>

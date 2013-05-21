@@ -4,7 +4,9 @@
     <string name="act__main__btn_simple_request">Simple request demo</string>
     <string name="act__main__btn_json_request">JSON request demo</string>
     <string name="act__main__btn_gson_request">Gson request demo</string>
+    <string name="act__main__btn_image_loading">Image loading</string>
     <string name="act__simple_request__btn_request">Execute simple request</string>
     <string name="act__json_request__btn_request">Execute JSON request</string>
     <string name="act__gson_request__btn_request">Execute Gson request</string>
+    <string name="act__image_loading__btn_request">Image loading</string>
 </resources>
