@@ -10,8 +10,9 @@ public class Act_ImageLoading extends Activity {
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.act__image_loader);
+      setContentView(R.layout.act__image_loading);
       
+      mImageView = (ImageView) findViewById(R.id.iv_image);
       
    }
 }
