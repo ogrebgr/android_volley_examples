@@ -9,4 +9,5 @@
     <string name="act__json_request__btn_request">Execute JSON request</string>
     <string name="act__gson_request__btn_request">Execute Gson request</string>
     <string name="act__image_loading__btn_request">Image loading</string>
+    <string name="act__image_loading_error__btn_request">Image loading with intentional error</string>
 </resources>
