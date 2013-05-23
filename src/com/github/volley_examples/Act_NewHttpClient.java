@@ -35,6 +35,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+/**
+ * Demonstrates how to use external HttpClient. You may want this approach if you need to use newer version of
+ * HttpClient. Basically this demo does exactly the same as {@see Act_SimpleRequest} but uses HttpClient 4.2.x 
+ * 
+ * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+ * 
+ */
 public class Act_NewHttpClient extends Activity {
     private TextView mTvResult;
 
@@ -50,9 +57,12 @@ public class Act_NewHttpClient extends Activity {
         btnSimpleRequest.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                RequestQueue queue = Volley.newRequestQueue(Act_NewHttpClient.this, 
-                                                            new ExtHttpClientStack(new DefaultHttpClient()));
-                
+                // Usually getting the request queue shall be in singleton like in {@see Act_SimpleRequest}
+                // Current approach is used just for brevity
+                RequestQueue queue = Volley
+                        .newRequestQueue(Act_NewHttpClient.this,
+                                         new ExtHttpClientStack(new DefaultHttpClient()));
+
                 StringRequest myReq = new StringRequest(Method.GET,
                                                         "http://www.google.com/",
                                                         createMyReqSuccessListener(),
