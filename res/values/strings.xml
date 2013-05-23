@@ -10,4 +10,5 @@
     <string name="act__gson_request__btn_request">Execute Gson request</string>
     <string name="act__image_loading__btn_request">Image loading</string>
     <string name="act__image_loading_error__btn_request">Image loading with intentional error</string>
+    <string name="act__ext_http_client">Newer external HttpClient (4.2.x)</string>
 </resources>

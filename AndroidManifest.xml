@@ -38,6 +38,10 @@
             android:name="com.github.volley_examples.Act_ImageLoading"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.github.volley_examples.Act_NewHttpClient"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

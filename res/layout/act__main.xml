@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:text="@string/act__main__btn_image_loading" >
     </Button>
+    <Button
+        android:id="@+id/btn_ext_http_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/act__ext_http_client" >
+    </Button>
 </LinearLayout>
