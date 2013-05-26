@@ -12,4 +12,7 @@
     <string name="act__image_loading_error__btn_request">Image loading with intentional error</string>
     <string name="act__ext_http_client">Newer external HttpClient (4.2.x)</string>
     <string name="act__main__btn_cookies">Using cookies</string>
+    <string name="act__act__ss_ssl_http_client">Using self-signed SSL cert</string>
+    <string name="act__ss_ssl_http_client">HTTPS request</string>
+    <string name="act__btn_https_request">Execute HTTPS request</string>
 </resources>

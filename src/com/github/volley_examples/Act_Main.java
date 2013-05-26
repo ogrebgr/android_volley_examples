@@ -79,5 +79,13 @@ public class Act_Main extends Activity {
               startActivity(intent);
            }
         });  
+        Button btnSsSslHttpClient = (Button) findViewById(R.id.btn_ss_ssl_http_client);
+        btnSsSslHttpClient.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Act_Main.this, Act_SsSslHttpClient.class);
+                startActivity(intent);
+            }
+        });  
     }
 }
