@@ -26,6 +26,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
+/**
+ * Demonstrates how to execute request that loads an image and sets it to <code>ImageView</code>
+ * @author Ognyan Bankov
+ *
+ */
 public class Act_ImageLoading extends Activity {
    private ImageView mImageView;
    

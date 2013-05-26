@@ -18,7 +18,11 @@ package com.github.volley_examples.app;
 
 import android.app.Application;
 
-
+/**
+ * Application class for the demo. Used to ensure that MyVolley is initialized. {@see MyVolley}
+ * @author Ognyan Bankov
+ *
+ */
 public class App_VolleyExamples extends Application {
     @Override
     public void onCreate() {

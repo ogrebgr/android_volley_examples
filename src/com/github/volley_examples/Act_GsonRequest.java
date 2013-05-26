@@ -32,7 +32,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/**
+ * Demonstrates how to use Volley along with Gson
+ * @author Ognyan Bankov
+ *
+ */
 public class Act_GsonRequest extends Activity {
     private TextView mTvResult;
 

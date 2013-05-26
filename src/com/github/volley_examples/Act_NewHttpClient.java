@@ -37,9 +37,10 @@ import android.widget.TextView;
 
 /**
  * Demonstrates how to use external HttpClient. You may want this approach if you need to use newer version of
- * HttpClient. Basically this demo does exactly the same as {@see Act_SimpleRequest} but uses HttpClient 4.2.x 
+ * HttpClient. Basically this demo does exactly the same as {@see Act_SimpleRequest} but uses HttpClient 4.2.x.
+ * For this example to work you will need khandroid-httpclient-4.2.3.jar which resides in libs/
  * 
- * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+ * @author Ognyan Bankov
  * 
  */
 public class Act_NewHttpClient extends Activity {

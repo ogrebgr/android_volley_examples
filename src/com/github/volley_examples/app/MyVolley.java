@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.github.volley_examples.app;
 
 import android.content.Context;
@@ -23,7 +22,12 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.github.volley_examples.toolbox.FakeImageCache;
 
-
+/**
+ * Helper class that is used to provide references to initialized RequestQueue(s) and ImageLoader(s)
+ * 
+ * @author Ognyan Bankov
+ *
+ */
 public class MyVolley {
     private static RequestQueue mRequestQueue;
     private static ImageLoader mImageLoaderNoMemCache;

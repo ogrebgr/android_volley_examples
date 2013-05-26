@@ -34,7 +34,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/**
+ * Demonstrates how to execute <code>JsonObjectRequest</code>
+ * @author Ognyan Bankov
+ *
+ */
 public class Act_JsonRequest extends Activity {
     private TextView mTvResult;
     

@@ -31,7 +31,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/**
+ * Demonstrates how to execute "plain" HTTP request, i.e. non-JSON.
+ * 
+ * @author Ognyan Bankov
+ *
+ */
 public class Act_SimpleRequest extends Activity {
     private TextView mTvResult;
 

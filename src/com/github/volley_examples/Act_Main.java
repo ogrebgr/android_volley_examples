@@ -25,7 +25,11 @@ import android.widget.Button;
 import android.app.Activity;
 import android.content.Intent;
 
-
+/**
+ * Main activity. All demos are started from here.
+ * @author Ognyan Bankov
+ *
+ */
 public class Act_Main extends Activity {
 
     @Override
