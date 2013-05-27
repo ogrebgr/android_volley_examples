@@ -55,7 +55,7 @@
             android:id="@+id/btn_ss_ssl_http_client"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/act__ss_ssl_http_client" >
+            android:text="@string/act__main__btn_ss_ssl_http_client" >
         </Button>
     </LinearLayout>
 

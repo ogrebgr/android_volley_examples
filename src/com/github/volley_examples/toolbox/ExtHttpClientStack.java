@@ -130,16 +130,18 @@ public class ExtHttpClientStack implements HttpStack {
             throws IllegalStateException, IOException {
         
         BasicHttpEntity ret = new BasicHttpEntity();
-        ret.setContent(ent.getContent());
-        ret.setContentLength(ent.getContentLength());
-        Header h;
-        h = ent.getContentEncoding();
-        if (h != null) {
-            ret.setContentEncoding(convertheaderNewToOld(h));
-        }
-        h = ent.getContentType();
-        if (h != null) {
-            ret.setContentType(convertheaderNewToOld(h));
+        if (ent != null) {
+            ret.setContent(ent.getContent());
+            ret.setContentLength(ent.getContentLength());
+            Header h;
+            h = ent.getContentEncoding();
+            if (h != null) {
+                ret.setContentEncoding(convertheaderNewToOld(h));
+            }
+            h = ent.getContentType();
+            if (h != null) {
+                ret.setContentType(convertheaderNewToOld(h));
+            }
         }
 
         return ret;
