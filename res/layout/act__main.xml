@@ -57,6 +57,13 @@
             android:layout_height="wrap_content"
             android:text="@string/act__main__btn_ss_ssl_http_client" >
         </Button>
+        <Button
+            android:id="@+id/btn_multiple_requests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/act__main__btn_multiple_requests" >
+        </Button>
+        
     </LinearLayout>
 
 </ScrollView>

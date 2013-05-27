@@ -16,4 +16,6 @@
     <string name="act__ss_ssl_http_client">HTTPS request</string>
     <string name="act__btn_https_request">Execute HTTPS request</string>
     <string name="act__main__btn_ss_ssl_http_client">HTTPS with self-signed cert</string>
+    <string name="act__main__btn_multiple_requests">Multiple requests</string>
+    
 </resources>

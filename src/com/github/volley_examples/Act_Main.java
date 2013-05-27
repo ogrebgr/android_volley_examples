@@ -87,5 +87,13 @@ public class Act_Main extends Activity {
                 startActivity(intent);
             }
         });  
+        Button btnMultipleRequests = (Button) findViewById(R.id.btn_multiple_requests);
+        btnMultipleRequests.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Act_Main.this, Act_MultipleRequests.class);
+                startActivity(intent);
+            }
+        });
     }
 }

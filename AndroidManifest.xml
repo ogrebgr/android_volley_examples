@@ -46,6 +46,10 @@
             android:name="com.github.volley_examples.Act_SsSslHttpClient"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.github.volley_examples.Act_MultipleRequests"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
