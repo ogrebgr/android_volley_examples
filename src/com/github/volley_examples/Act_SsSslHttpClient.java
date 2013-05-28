@@ -36,10 +36,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-//openssl req $@ -new -x509 -days 365 -nodes -out /etc/apache2/ssl/imeto.pem -keyout /etc/apache2/ssl/imeto.pem
-//keytool -importcert -v -trustcacerts -file "imeto.pem" -alias imeto_alias -keystore "cenagent.bks" -provider org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath "bcprov-jdk16-146.jar" -storetype BKS
-
-
 /**
  * Demonstrates how to execute HTTPS request against server with self-signed certificate.
  * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
