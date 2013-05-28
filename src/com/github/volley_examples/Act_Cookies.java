@@ -41,6 +41,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+/**
+ * Demonstrates how to use cookies.
+ * <p>
+ * When pressing "Execute request" app executes the request, server reads the cookie (if present), increases it with one and sets its back.
+ * </p>
+ * 
+ * <p>
+ * When pressing "Set cookie and execute" app sets the cookie to 41 and then executes the request.
+ * </p>
+ * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+ *
+ */
 public class Act_Cookies extends Activity {
     private TextView mTvCookie;
     private RequestQueue mQueue;
