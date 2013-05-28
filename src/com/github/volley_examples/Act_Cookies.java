@@ -44,7 +44,7 @@ import android.widget.TextView;
 /**
  * Demonstrates how to use cookies.
  * <p>
- * When pressing "Execute request" app executes the request, server reads the cookie (if present), increases it with one and sets its back.
+ * When pressing "Execute request" app executes the request, server reads the cookie (if present), increases it with one and sends its back.
  * </p>
  * 
  * <p>
