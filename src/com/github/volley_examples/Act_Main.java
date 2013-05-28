@@ -71,6 +71,14 @@ public class Act_Main extends Activity {
               startActivity(intent);
            }
         });        
+        Button btnCookies = (Button) findViewById(R.id.btn_cookies);
+        btnCookies.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Act_Main.this, Act_Cookies.class);
+                startActivity(intent);
+            }
+        });        
         Button btnExtHttpClient = (Button) findViewById(R.id.btn_ext_http_client);
         btnExtHttpClient.setOnClickListener(new OnClickListener() {
            @Override
