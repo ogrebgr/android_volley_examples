@@ -15,6 +15,13 @@
             android:layout_height="wrap_content"
             android:text="@string/act__main__btn_simple_request" >
         </Button>
+        
+        <Button
+            android:id="@+id/btn_params"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/act__main__btn_params" >
+        </Button>
 
         <Button
             android:id="@+id/btn_json_request"

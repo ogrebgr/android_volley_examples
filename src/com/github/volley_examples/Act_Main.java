@@ -46,6 +46,15 @@ public class Act_Main extends Activity {
             }
         });
 
+        Button btnParams = (Button) findViewById(R.id.btn_params);
+        btnParams.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Act_Main.this, Act_Params.class);
+                startActivity(intent);
+            }
+        });
+        
         Button btnJsonRequest = (Button) findViewById(R.id.btn_json_request);
         btnJsonRequest.setOnClickListener(new OnClickListener() {
             @Override

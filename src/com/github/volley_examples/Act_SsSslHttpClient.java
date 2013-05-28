@@ -38,7 +38,7 @@ import android.widget.TextView;
 
 /**
  * Demonstrates how to execute HTTPS request against server with self-signed certificate.
- * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+ * @author Ognyan Bankov
  *
  */
 public class Act_SsSslHttpClient extends Activity {

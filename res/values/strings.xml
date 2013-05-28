@@ -21,4 +21,12 @@
     <string name="act_cookie__btn_execute_request">Execute request</string>
     <string name="act_cookie__btn_set_cookie">Set cookie and execute</string>
     <string name="act_cookie__tv_cookie">Cookie value: %s</string>
+    
+    <string name="act__params_get">Request with GET params</string>
+    <string name="act__params_post">Request with POST params</string>
+    <string name="act__params_get_post">Request with GET and POST params</string>
+    <string name="act__params__num1_hint">Decimal 1</string>
+    <string name="act__params__num2_hint">Decimal 2</string>
+    <string name="act__params__sum">Sum: %s</string>
+    <string name="act__main__btn_params">GET and POST parameters</string>
 </resources>

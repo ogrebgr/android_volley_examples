@@ -50,7 +50,7 @@ import android.widget.TextView;
  * <p>
  * When pressing "Set cookie and execute" app sets the cookie to 41 and then executes the request.
  * </p>
- * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+ * @author Ognyan Bankov
  *
  */
 public class Act_Cookies extends Activity {
