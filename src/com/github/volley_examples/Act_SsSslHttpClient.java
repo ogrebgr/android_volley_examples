@@ -68,7 +68,7 @@ public class Act_SsSslHttpClient extends Activity {
                                          new ExtHttpClientStack(new SslHttpClient(keyStore, "test123", 44400)));
 
                 StringRequest myReq = new StringRequest(Method.GET,
-                                                        "https://tp.bolyartech.com:44400/https_test.html",
+                                                        "https://ave.bolyartech.com:44401/https_test.html",
                                                         createMyReqSuccessListener(),
                                                         createMyReqErrorListener());
 
