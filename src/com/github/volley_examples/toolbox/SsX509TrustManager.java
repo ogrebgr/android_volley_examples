@@ -30,10 +30,10 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 
-public class MyX509TrustManager implements javax.net.ssl.X509TrustManager {
+public class SsX509TrustManager implements javax.net.ssl.X509TrustManager {
     private ArrayList<X509TrustManager> mX509TrustManagers = new ArrayList<X509TrustManager>();
 
-    protected MyX509TrustManager(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
+    protected SsX509TrustManager(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
         // first add original trust manager
         final TrustManagerFactory originalFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
         originalFactory.init((KeyStore) null);

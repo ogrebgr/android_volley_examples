@@ -36,7 +36,7 @@ class SslSocketFactory extends SSLSocketFactory {
         SSLContext sslcontext = null;
         try {
             sslcontext = SSLContext.getInstance("TLS");
-            sslcontext.init(null, new TrustManager[] { new MyX509TrustManager(keyStore, keyStorePassword) }, null);
+            sslcontext.init(null, new TrustManager[] { new SsX509TrustManager(keyStore, keyStorePassword) }, null);
         } catch (NoSuchAlgorithmException e) {
             throw new IllegalStateException("Failure initializing default SSL context", e);
         } catch (KeyManagementException e) {
