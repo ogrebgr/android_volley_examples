@@ -19,8 +19,6 @@ package com.github.volley_examples;
 import java.util.HashMap;
 import java.util.Map;
 
-import khandroid.ext.apache.http.client.utils.URIBuilder;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -28,8 +26,6 @@ import com.android.volley.Request.Method;
 import com.android.volley.toolbox.StringRequest;
 import com.example.volley_examples.R;
 import com.github.volley_examples.app.MyVolley;
-import com.github.volley_examples.toolbox.ExtHttpClientStack;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,16 +68,16 @@ public class Act_Params extends Activity {
                 String num1 = mEtNum1.getText().toString();
                 String num2 = mEtNum2.getText().toString();
                 if (num1 != null && !num1.equals("") && num2 != null && !num2.equals("")) {
-                    String uri = String.format("http://ave.bolyartech.com/params.php?param1=%1$s&param2=%2$s",
-                                               num1,
-                                               num2);
+                    String uri = String
+                            .format("http://ave.bolyartech.com/params.php?param1=%1$s&param2=%2$s",
+                                    num1,
+                                    num2);
 
                     StringRequest myReq = new StringRequest(Method.GET,
                                                             uri,
                                                             createMyReqSuccessListener(),
                                                             createMyReqErrorListener());
                     queue.add(myReq);
-
                 }
             }
         });
