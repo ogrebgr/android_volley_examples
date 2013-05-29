@@ -21,7 +21,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.github.volley_examples.toolbox.BitmapLruCache;
-import com.github.volley_examples.toolbox.FakeImageCache;
 
 
 /**
