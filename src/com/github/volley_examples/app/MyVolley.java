@@ -33,7 +33,7 @@ public class MyVolley {
     private static final int MAX_IMAGE_CACHE_ENTIRES  = 100;
     
     private static RequestQueue mRequestQueue;
-    private static ImageLoader mImageLoaderNoMemCache;
+    private static ImageLoader mImageLoader;
 
 
     private MyVolley() {
@@ -43,7 +43,7 @@ public class MyVolley {
 
     static void init(Context context) {
         mRequestQueue = Volley.newRequestQueue(context);
-        mImageLoaderNoMemCache = new ImageLoader(mRequestQueue, new BitmapLruCache(MAX_IMAGE_CACHE_ENTIRES));
+        mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache(MAX_IMAGE_CACHE_ENTIRES));
     }
 
 
@@ -63,9 +63,9 @@ public class MyVolley {
      * 
      * @return
      */
-    public static ImageLoader getImageLoaderNoMemCache() {
-        if (mImageLoaderNoMemCache != null) {
-            return mImageLoaderNoMemCache;
+    public static ImageLoader getImageLoader() {
+        if (mImageLoader != null) {
+            return mImageLoader;
         } else {
             throw new IllegalStateException("ImageLoader not initialized");
         }

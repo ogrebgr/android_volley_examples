@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="left|center_vertical"
+    >
+    <com.android.volley.toolbox.NetworkImageView 
+	    android:layout_width="80dp"
+	    android:layout_height="80dp"
+	    android:id="@+id/iv_thumb"
+    />
+    <TextView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/tv_title"
+	    android:layout_marginLeft="5dp"
+    />
+</LinearLayout>

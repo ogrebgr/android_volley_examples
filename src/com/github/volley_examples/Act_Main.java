@@ -103,6 +103,15 @@ public class Act_Main extends Activity {
                 Intent intent = new Intent(Act_Main.this, Act_SsSslHttpClient.class);
                 startActivity(intent);
             }
+        });
+        
+        Button btnNetworkListView = (Button) findViewById(R.id.btn_network_list_view);
+        btnNetworkListView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Act_Main.this, Act_NetworkListView.class);
+                startActivity(intent);
+            }
         });  
     }
 }

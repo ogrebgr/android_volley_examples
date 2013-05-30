@@ -46,7 +46,7 @@ public class Act_ImageLoading extends Activity {
       btnImageLoadingRequest.setOnClickListener(new OnClickListener() {
           @Override
           public void onClick(View v) {
-             ImageLoader imageLoader = MyVolley.getImageLoaderNoMemCache();
+             ImageLoader imageLoader = MyVolley.getImageLoader();
              imageLoader.get("https://lh3.googleusercontent.com/-LMUs793rAL4/SUQczGj6CBI/AAAAAAAAJqs/NLBzZMDMhS4/s720/P7300049aasd.JPG", 
                             ImageLoader.getImageListener(mImageView, 
                                                           R.drawable.no_image, 
@@ -58,7 +58,7 @@ public class Act_ImageLoading extends Activity {
       btnImageLoadingErrorRequest.setOnClickListener(new OnClickListener() {
           @Override
           public void onClick(View v) {
-             ImageLoader imageLoader = MyVolley.getImageLoaderNoMemCache();
+             ImageLoader imageLoader = MyVolley.getImageLoader();
              imageLoader.get("https://lh3.googleusercontent.com/-LMUs793rAL4/SUQczGj6CBI/AAAAAAAAJqs/NLBzZMDMhS4a/s720/P7300049.JPG", 
                             ImageLoader.getImageListener(mImageView, 
                                                           R.drawable.no_image, 

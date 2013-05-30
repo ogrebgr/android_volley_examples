@@ -29,4 +29,5 @@
     <string name="act__params__num2_hint">Decimal 2</string>
     <string name="act__params__sum">Sum: %s</string>
     <string name="act__main__btn_params">GET and POST parameters</string>
+    <string name="act__main__btn_network_list_view">Dynamic ListView with NetworkImageView</string>
 </resources>
