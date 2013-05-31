@@ -26,6 +26,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.Request.Method;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.example.volley_examples.R;
 import com.github.volley_examples.app.MyVolley;
@@ -86,7 +87,7 @@ public class Act_NetworkListView extends Activity {
         RequestQueue queue = MyVolley.getRequestQueue();
 
         int startIndex = 1 + mEntries.size();
-        StringRequest myReq = new StringRequest(Method.GET,
+        JsonObjectRequest myReq = new JsonObjectRequest(Method.GET,
                                                 "https://picasaweb.google.com/data/feed/api/all?q=kitten&max-results="
                                                         +
                                                         RESULTS_PAGE_SIZE
@@ -94,6 +95,7 @@ public class Act_NetworkListView extends Activity {
                                                         "&thumbsize=160&alt=json"
                                                         + "&start-index="
                                                         + startIndex,
+                                                        null,
                                                 createMyReqSuccessListener(),
                                                 createMyReqErrorListener());
 
@@ -101,14 +103,12 @@ public class Act_NetworkListView extends Activity {
     }
 
 
-    private Response.Listener<String> createMyReqSuccessListener() {
-        return new Response.Listener<String>() {
+    private Response.Listener<JSONObject> createMyReqSuccessListener() {
+        return new Response.Listener<JSONObject>() {
             @Override
-            public void onResponse(String response) {
-                JSONObject container;
+            public void onResponse(JSONObject response) {
                 try {
-                    container = new JSONObject(response);
-                    JSONObject feed = container.getJSONObject("feed");
+                    JSONObject feed = response.getJSONObject("feed");
                     JSONArray entries = feed.getJSONArray("entry");
                     JSONObject entry;
                     for (int i = 0; i < entries.length(); i++) {
