@@ -15,6 +15,7 @@
  */
 package com.github.volley_examples.app;
 
+import android.app.ActivityManager;
 import android.content.Context;
 
 import com.android.volley.RequestQueue;
@@ -30,8 +31,6 @@ import com.github.volley_examples.toolbox.BitmapLruCache;
  * 
  */
 public class MyVolley {
-    private static final int MAX_IMAGE_CACHE_ENTIRES  = 100;
-    
     private static RequestQueue mRequestQueue;
     private static ImageLoader mImageLoader;
 
@@ -43,22 +42,12 @@ public class MyVolley {
 
     static void init(Context context) {
         mRequestQueue = Volley.newRequestQueue(context);
-        /* 
-         * Thanks to your sample codes. but.
-         * please check MAX_IMAGE_CACHE_ENTRIES .. (I'm not meaning it's spelled)
-         * you overrided sizeOf method in BitmapLruCache class that returns size of entry(bitmap).
-         * but here you define maxSize to 100, that means set cache size to 100 byte.
-         * So, no image can cache to LruCache.
-         * Remove sizeOf method in BitmaplruCache class, 
-         * or change max_image_cache_entries to some memory size like this.
-         * int memClass = ((ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass();
-		 *	// Use 1/8th of the available memory for this memory cache.
-		 *	int cacheSize = 1024 * 1024 * memClass / 8;
-		 * mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache(MAX_IMAGE_CACHE_ENTIRES));
-		 * 
-		 */
-		 //TODO please check MAX_IMAGE_CACHE_ENTIRES
-        mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache(MAX_IMAGE_CACHE_ENTIRES));
+
+        int memClass = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE))
+                .getMemoryClass();
+        // Use 1/8th of the available memory for this memory cache.
+        int cacheSize = 1024 * 1024 * memClass / 8;
+        mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache(cacheSize));
     }
 
 
