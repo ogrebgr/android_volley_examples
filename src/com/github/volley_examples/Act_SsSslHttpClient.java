@@ -65,7 +65,7 @@ public class Act_SsSslHttpClient extends Activity {
                 // Current approach is used just for brevity
                 RequestQueue queue = Volley
                         .newRequestQueue(Act_SsSslHttpClient.this,
-                                         new ExtHttpClientStack(new SslHttpClient(keyStore, "test123", 44400)));
+                                         new ExtHttpClientStack(new SslHttpClient(keyStore, "test123", 44401)));
 
                 StringRequest myReq = new StringRequest(Method.GET,
                                                         "https://ave.bolyartech.com:44401/https_test.html",
