@@ -22,7 +22,7 @@ import com.github.volley_examples.Act_NetworkListView;
 /**
  * Holds the data for Picasa photo that is used in the {@link Act_NetworkListView}
  * 
- * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+ * @author Ognyan Bankov
  *
  */
 public class PicasaEntry {

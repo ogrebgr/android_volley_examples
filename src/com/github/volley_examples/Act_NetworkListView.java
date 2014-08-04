@@ -27,7 +27,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.Request.Method;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.example.volley_examples.R;
 import com.github.volley_examples.app.MyVolley;
 import com.github.volley_examples.misc.PicasaArrayAdapter;
@@ -48,8 +47,7 @@ import android.widget.AbsListView.OnScrollListener;
  * Please note that for production environment you will need to add functionality like handling rotation, 
  * showing/hiding (indeterminate) progress indicator while loading, indicating that there are no more records, etc...
  *   
- * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
- *
+ * @author Ognyan Bankov 
  */
 public class Act_NetworkListView extends Activity {
     private static final int RESULTS_PAGE_SIZE = 20;
@@ -158,7 +156,7 @@ public class Act_NetworkListView extends Activity {
      * Detects when user is close to the end of the current page and starts loading the next page
      * so the user will not have to wait (that much) for the next entries.
      * 
-     * @author Ognyan Bankov (ognyan.bankov@bulpros.com)
+     * @author Ognyan Bankov
      */
     public class EndlessScrollListener implements OnScrollListener {
         // how many entries earlier to start loading next page
