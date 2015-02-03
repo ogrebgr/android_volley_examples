@@ -59,7 +59,8 @@ public class Act_SsSslHttpClient extends Activity {
                 
                //File bks for trust the server certificate in there import server certificate
                InputStream trustKeyStore = getResources().openRawResource(R.raw.clienttruststore);
-               //File bks client certificate
+               //File bks client certificate, only if you want mutual auth
+               //Otherwise keyStore = null
                InputStream keyStore = getResources().openRawResource(R.raw.client);
                 
                 
