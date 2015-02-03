@@ -52,7 +52,7 @@ InputStream keyStore = getResources().openRawResource(R.raw.test);
 // Current approach is used just for brevity
 RequestQueue queue = Volley
 .newRequestQueue(Act_SsSslHttpClient.this,
-new ExtHttpClientStack(new SslHttpClient(keyStore, "test123", 44401,null)));
+new ExtHttpClientStack(new SslHttpClient(keyStore, "test123", 44401)));
 StringRequest myReq = new StringRequest(Method.GET,
 "https://ave.bolyartech.com:44401/https_test.html",
 createMyReqSuccessListener(),
