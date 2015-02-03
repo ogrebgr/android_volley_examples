@@ -47,6 +47,10 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name="com.github.volley_examples.Act_AuthSsSslHttpClient"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="com.github.volley_examples.Act_Cookies"
             android:label="@string/app_name" >
         </activity>
