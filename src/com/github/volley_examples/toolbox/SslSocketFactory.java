@@ -27,6 +27,9 @@ import khandroid.ext.apache.http.conn.ssl.SSLSocketFactory;
 
 
 class SslSocketFactory extends SSLSocketFactory {
+    
+    private static KeyManager [] mKeyManager;
+
     public SslSocketFactory(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
         super(createSSLContext(keyStore, keyStorePassword), STRICT_HOSTNAME_VERIFIER);
     }
@@ -34,9 +37,27 @@ class SslSocketFactory extends SSLSocketFactory {
 
     private static SSLContext createSSLContext(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
         SSLContext sslcontext = null;
+        KeyStore key =null;
         try {
+
+            if (keyStore!=null){
+            //add keystore for mutual auth
+            key = KeyStore.getInstance("BKS");
+            key.load(keyStore, keyStorePassword.toCharArray());
+            KeyManagerFactory kmf = KeyManagerFactory
+                    .getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            kmf.init(key, keyStorePassword.toCharArray());
+            mKeyManager = kmf.getKeyManagers();
+
+            }
+            else{
+            //if mutual auth not need this parameter is null
+            mKeyManager = null;
+
+            }
+            
             sslcontext = SSLContext.getInstance("TLS");
-            sslcontext.init(null, new TrustManager[] { new SsX509TrustManager(keyStore, keyStorePassword) }, null);
+            sslcontext.init(mKeyManager, new TrustManager[] { new SsX509TrustManager(keyStore, keyStorePassword) }, null);
         } catch (NoSuchAlgorithmException e) {
             throw new IllegalStateException("Failure initializing default SSL context", e);
         } catch (KeyManagementException e) {
