@@ -57,15 +57,16 @@ public class Act_SsSslHttpClient extends Activity {
             @Override
             public void onClick(View v) {
                 
-                // Replace R.raw.test with your keystore 
-                InputStream keyStore = getResources().openRawResource(R.raw.test);
+               InputStream trustKeyStore = getResources().openRawResource(R.raw.clienttruststore);
+
+               InputStream keyStore = getResources().openRawResource(R.raw.client);
                 
                 
                 // Usually getting the request queue shall be in singleton like in {@see Act_SimpleRequest}
                 // Current approach is used just for brevity
                 RequestQueue queue = Volley
                         .newRequestQueue(Act_SsSslHttpClient.this,
-                                         new ExtHttpClientStack(new SslHttpClient(keyStore, "test123", 44401)));
+                                         new ExtHttpClientStack(new SslHttpClient(trustKeyStore, "password", 443,keyStore)));
 
                 StringRequest myReq = new StringRequest(Method.GET,
                                                         "https://ave.bolyartech.com:44401/https_test.html",
