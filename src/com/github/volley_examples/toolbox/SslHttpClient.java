@@ -35,7 +35,9 @@ public class SslHttpClient extends DefaultHttpClient {
     private static final int HTTP_DEFAULT_HTTPS_PORT = 443;
     private static final String HTTP_SSL_SCHEME = "https";
 
-    private InputStream mKeyStore;
+    private InputStream mKeyStore=null;
+    private InputStream mTrustKeyStore;
+   
     private String mKeyStorePassword;
     private int mHttpsPort;
 
@@ -71,12 +73,22 @@ public class SslHttpClient extends DefaultHttpClient {
         this.mKeyStore = keyStore;
         this.mKeyStorePassword = keyStorePassword;
     }
+    
+  
 
 
     public SslHttpClient(final HttpParams params, InputStream keyStore, String keyStorePassword) {
         super(null, checkForInvalidParams(params));
         this.mKeyStore = keyStore;
         this.mKeyStorePassword = keyStorePassword;
+    }
+    
+      //Construct for mutual auth
+    public SslHttpClient(InputStream trustKeyStore, String keyStorePassword, int httpPort, InputStream keyStore) {
+        mTrustKeyStore = trustKeyStore;
+        mKeyStore = keyStore;
+        mKeyStorePassword = keyStorePassword;
+        mHttpsPort = httpPort;
     }
 
 
@@ -103,7 +115,7 @@ public class SslHttpClient extends DefaultHttpClient {
 
         PoolingClientConnectionManager ret;
         try {
-            registry.register(new Scheme(HTTP_SSL_SCHEME, mHttpsPort, new SslSocketFactory(mKeyStore, mKeyStorePassword)));
+            registry.register(new Scheme(HTTP_SSL_SCHEME, mHttpsPort, new SslSocketFactory(mTrustKeyStore, mKeyStorePassword,mKeyStore)));
             ret = new PoolingClientConnectionManager(registry);
         } catch (GeneralSecurityException e) {
             throw new IllegalStateException(e);
