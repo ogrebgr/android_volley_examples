@@ -30,12 +30,12 @@ class SslSocketFactory extends SSLSocketFactory {
     
     private static KeyManager [] mKeyManager;
 
-    public SslSocketFactory(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
-        super(createSSLContext(keyStore, keyStorePassword), STRICT_HOSTNAME_VERIFIER);
+   public SslSocketFactory(InputStream mTrustKeyStore, String keyStorePassword, InputStream keyStore) throws GeneralSecurityException {
+        super(createSSLContext(mTrustKeyStore, keyStorePassword,keyStore), STRICT_HOSTNAME_VERIFIER);
     }
 
 
-    private static SSLContext createSSLContext(InputStream keyStore, String keyStorePassword) throws GeneralSecurityException {
+    private static SSLContext createSSLContext(InputStream mTrustkeyStore, String keyStorePassword,InputStream keyStore) throws GeneralSecurityException {
         SSLContext sslcontext = null;
         KeyStore key =null;
         try {
