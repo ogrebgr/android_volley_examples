@@ -57,8 +57,9 @@ public class Act_SsSslHttpClient extends Activity {
             @Override
             public void onClick(View v) {
                 
+               //File bks for trust the server certificate in there import server certificate
                InputStream trustKeyStore = getResources().openRawResource(R.raw.clienttruststore);
-
+               //File bks client certificate
                InputStream keyStore = getResources().openRawResource(R.raw.client);
                 
                 
