@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,15 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.github.volley_examples;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.volley.Request.Method;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -32,37 +35,60 @@ import com.github.volley_examples.toolbox.ExtHttpClientStack;
 import com.github.volley_examples.toolbox.SslHttpClient;
 
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+
 /**
- * Demonstrates how to execute HTTPS request against server with self-signed certificate.
- * @author Ognyan Bankov
+ * Demonstrates how to execute mutual TLS/SSL request client - server with self-signed certificate.
+ * @author Balduzzi Antonio
  *
  */
-public class Act_SsSslHttpClient extends Activity {
+public class Act_AuthSsSslHttpClient extends Activity {
     private TextView mTvResult;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act__ss_ssl_http_client);
+        setContentView(R.layout.act_mutual_ss_ssl_http_client);
+
         mTvResult = (TextView) findViewById(R.id.tv_result);
-        Button btnSimpleRequest = (Button) findViewById(R.id.btn_simple_request);
+
+        Button btnSimpleRequest = (Button) findViewById(R.id.btn_simple_mutual_request);
         btnSimpleRequest.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-// Replace R.raw.test with your keystore
-                InputStream keyStore = getResources().openRawResource(R.raw.clienttruststore);
-// Usually getting the request queue shall be in singleton like in {@see Act_SimpleRequest}
-// Current approach is used just for brevity
+
+               // For simple the password are the same for clienttruststore and client keystore
+
+
+                // Replace R.raw.clienttruststore with your trust keystore in this import server cert
+               InputStream trustKeyStore = getResources().openRawResource(R.raw.clienttruststore);
+
+               // Replace R.raw.client with your client keystore
+               InputStream keyStore = getResources().openRawResource(R.raw.client);
+
+                // Usually getting the request queue shall be in singleton like in {@see Act_SimpleRequest}
+                // Current approach is used just for brevity
                 RequestQueue queue = Volley
-                        .newRequestQueue(Act_SsSslHttpClient.this,
-                                new ExtHttpClientStack(new SslHttpClient(keyStore, "test", 443)));
-                StringRequest myReq = new StringRequest(Method.GET,
-                        "https://ave.bolyartech.com:44401/https_test.html",
-                        createMyReqSuccessListener(),
-                        createMyReqErrorListener());
+                        .newRequestQueue(Act_AuthSsSslHttpClient.this,
+                                new ExtHttpClientStack(new SslHttpClient(trustKeyStore, "YOUR_PASSWORD", 443,keyStore)));
+
+                StringRequest myReq = new StringRequest(Request.Method.GET,
+                                                        "https://IP_SERVER:8443/Server/getSomething",
+                                                        createMyReqSuccessListener(),
+                                                        createMyReqErrorListener()){
+
+                };
                 queue.add(myReq);
+
+
             }
         });
     }
+
+    
     private Response.Listener<String> createMyReqSuccessListener() {
         return new Response.Listener<String>() {
             @Override
@@ -71,6 +97,8 @@ public class Act_SsSslHttpClient extends Activity {
             }
         };
     }
+
+
     private Response.ErrorListener createMyReqErrorListener() {
         return new Response.ErrorListener() {
             @Override

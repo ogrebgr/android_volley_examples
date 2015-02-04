@@ -35,22 +35,32 @@ public class SslHttpClient extends DefaultHttpClient {
     private static final int HTTP_DEFAULT_HTTPS_PORT = 443;
     private static final String HTTP_SSL_SCHEME = "https";
 
+    private InputStream mTrustKeyStore;
     private InputStream mKeyStore;
+
     private String mKeyStorePassword;
     private int mHttpsPort;
 
 
     public SslHttpClient(InputStream keyStore, String keyStorePassword) {
-        mKeyStore = keyStore;
+        mTrustKeyStore = keyStore;
         mKeyStorePassword = keyStorePassword;
         mHttpsPort = HTTP_DEFAULT_HTTPS_PORT;
     }
 
 
-    public SslHttpClient(InputStream keyStore, String keyStorePassword, int httpPort) {
+    public SslHttpClient(InputStream TrustKeyStore, String keyStorePassword, int httpPort, InputStream keyStore) {
+        mTrustKeyStore = TrustKeyStore;
         mKeyStore = keyStore;
         mKeyStorePassword = keyStorePassword;
         mHttpsPort = httpPort;
+    }
+
+    public SslHttpClient(InputStream TrustKeyStore, String keyStorePassword, int httpPort) {
+        mTrustKeyStore = TrustKeyStore;
+        mKeyStorePassword = keyStorePassword;
+        mHttpsPort = httpPort;
+        mKeyStore =null;
     }
 
 
@@ -58,24 +68,25 @@ public class SslHttpClient extends DefaultHttpClient {
             InputStream keyStore,
             String keyStorePassword) {
         super(conman);
-        mKeyStore = keyStore;
+        mTrustKeyStore = keyStore;
         mKeyStorePassword = keyStorePassword;
     }
 
 
     public SslHttpClient(final ClientConnectionManager conman,
-            final HttpParams params,
-            InputStream keyStore,
-            String keyStorePassword) {
+                         final HttpParams params,
+                         InputStream keyStore,
+                         String keyStorePassword) {
         super(conman, checkForInvalidParams(params));
-        this.mKeyStore = keyStore;
+        this.mTrustKeyStore = keyStore;
         this.mKeyStorePassword = keyStorePassword;
     }
 
 
+
     public SslHttpClient(final HttpParams params, InputStream keyStore, String keyStorePassword) {
         super(null, checkForInvalidParams(params));
-        this.mKeyStore = keyStore;
+        this.mTrustKeyStore = keyStore;
         this.mKeyStorePassword = keyStorePassword;
     }
 
@@ -103,7 +114,13 @@ public class SslHttpClient extends DefaultHttpClient {
 
         PoolingClientConnectionManager ret;
         try {
-            registry.register(new Scheme(HTTP_SSL_SCHEME, mHttpsPort, new SslSocketFactory(mKeyStore, mKeyStorePassword)));
+
+
+
+
+            registry.register(new Scheme(HTTP_SSL_SCHEME, mHttpsPort, new SslSocketFactory(mTrustKeyStore, mKeyStorePassword,mKeyStore)));
+
+
             ret = new PoolingClientConnectionManager(registry);
         } catch (GeneralSecurityException e) {
             throw new IllegalStateException(e);
