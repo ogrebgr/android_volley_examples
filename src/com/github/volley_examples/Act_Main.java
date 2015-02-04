@@ -113,13 +113,5 @@ public class Act_Main extends Activity {
                 startActivity(intent);
             }
         });  
-        Button btnMutualSsSslHttpClient = (Button) findViewById(R.id.btn_simple_mutual_request);
-        btnMutualSsSslHttpClient.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Act_Main.this, Act_AuthSsSslHttpClient.class);
-                startActivity(intent);
-            }
-        });
     }
 }

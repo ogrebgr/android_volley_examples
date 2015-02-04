@@ -67,13 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/act__main__btn_network_list_view" >
-        </Button>       
-         <Button
-            android:id="@+id/btn_simple_mutual_request"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/act__main__btn_mutual_ss_ssl_http_client" >
-        </Button>
+        </Button>        
     </LinearLayout>
 
 </ScrollView>

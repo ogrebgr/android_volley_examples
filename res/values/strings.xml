@@ -18,9 +18,6 @@
     <string name="act__btn_https_request">Execute HTTPS request</string>
     <string name="act__main__btn_ss_ssl_http_client">HTTPS with self-signed cert</string>
     
-    <string name="act__main__btn_mutual_ss_ssl_http_client">Mutual Auth TLS/SSL with self-signed cert</string>
-    <string name="act__btn_https_mutual_request">Execute Mutual Auth HTTPS request</string>
-    
     <string name="act_cookie__btn_execute_request">Execute request</string>
     <string name="act_cookie__btn_set_cookie">Set cookie and execute</string>
     <string name="act_cookie__tv_cookie">Cookie value: %s</string>
